@@ -68,12 +68,12 @@ class atualizaip
      * */
     public function atualizaIP(bool $acessoLocal = true)
     {
-        if(!$this->validaConfiguracao()){
-            throw new \Exception('Erro na configuração da aplicação');
-        }
     
         try {
 
+            if(!$this->validaConfiguracao()){
+                throw new \Exception('Erro na configuração da aplicação');
+            }
     
             // entra com as credenciais da AWS
             $credentials = new Aws\Credentials\Credentials(AWS_KEY, AWS_SECRET_KEY);
